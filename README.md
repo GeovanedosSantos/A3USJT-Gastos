@@ -9,7 +9,7 @@ IDE = Netbeans
 Maven = Versão 3.9.1 ou 3.9.5
 
 
-Banco de Dados = MySql
+Banco de Dados = MySql 3.0.35/JDBC 8.0.33
 
 
 Ferramenta para o banco de dados = Mysql Workbench
