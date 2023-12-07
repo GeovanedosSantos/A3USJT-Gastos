@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+ **/
 package A3;
 
 import java.sql.Connection;
@@ -42,7 +42,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     public TelaPrincipal() {
         initComponents();
-        this.setTitle("Controle de Gastos");
+       
         
         
         
@@ -106,6 +106,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         PainelAdicionarSaldo.setAutoRequestFocus(false);
         PainelAdicionarSaldo.setBackground(new java.awt.Color(3, 154, 154));
@@ -310,6 +311,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bntVoltarDinheiro.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         bntVoltarDinheiro.setForeground(new java.awt.Color(254, 254, 254));
         bntVoltarDinheiro.setText("Sair");
+        bntVoltarDinheiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntVoltarDinheiroActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(254, 254, 254));
@@ -404,7 +410,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         CompararBotaoAcao.setBackground(new java.awt.Color(0, 102, 102));
         CompararBotaoAcao.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         CompararBotaoAcao.setForeground(new java.awt.Color(254, 254, 254));
-        CompararBotaoAcao.setText("Compara");
+        CompararBotaoAcao.setText("Comparar");
         CompararBotaoAcao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CompararBotaoAcaoActionPerformed(evt);
@@ -509,7 +515,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lGastoTotal.setText("Gastos: R$");
 
         BntSaldoAdiciona.setBackground(new java.awt.Color(0, 102, 102));
-        BntSaldoAdiciona.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        BntSaldoAdiciona.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         BntSaldoAdiciona.setForeground(new java.awt.Color(254, 255, 255));
         BntSaldoAdiciona.setText("+Saldo");
         BntSaldoAdiciona.addActionListener(new java.awt.event.ActionListener() {
@@ -519,7 +525,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         BntGastoPainel.setBackground(new java.awt.Color(0, 102, 102));
-        BntGastoPainel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        BntGastoPainel.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         BntGastoPainel.setForeground(new java.awt.Color(254, 254, 254));
         BntGastoPainel.setText("+Gasto");
         BntGastoPainel.addActionListener(new java.awt.event.ActionListener() {
@@ -529,7 +535,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         BntAdicionarDinheiro.setBackground(new java.awt.Color(0, 102, 102));
-        BntAdicionarDinheiro.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        BntAdicionarDinheiro.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         BntAdicionarDinheiro.setForeground(new java.awt.Color(254, 254, 254));
         BntAdicionarDinheiro.setText("+Dinheiro");
         BntAdicionarDinheiro.addActionListener(new java.awt.event.ActionListener() {
@@ -539,7 +545,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
-        jButton1.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(254, 254, 254));
         jButton1.setText("Comparar");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -559,6 +565,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Saldo: ");
 
+        jButton2.setText("SAIR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -570,16 +583,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(274, 274, 274)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(358, 358, 358))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)))
+                .addGap(263, 263, 263)
+                .addComponent(jButton2)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
                 .addGap(82, 82, 82))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -612,14 +631,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BntSaldoAdiciona, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(BntAdicionarDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(BntGastoPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BntSaldoAdiciona, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86)
                 .addComponent(lGastoEssencial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -813,7 +832,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void BntAdicionaDinheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntAdicionaDinheiroActionPerformed
         // TODO add your handling code here:
-        String sql5 = "select saldo_flutuante from "+formattedDate+"tb where usuario_id=? and ano=?";
+        String sql5 = "select saldo_flutuante, saldo_inicial from "+formattedDate+"tb where usuario_id=? and ano=?";
         ConnectionFactory factory = new ConnectionFactory();
         usuario.setId_usuario(id_usuario);
         try(Connection con = factory.obtemConexao()){
@@ -824,10 +843,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
            
             if(rs.next()){
                 double saldo_flutuante = rs.getDouble("saldo_flutuante");
+                double saldo_inicial = rs.getDouble("saldo_inicial");
                 if(AdicionaDinheiro.getText().equalsIgnoreCase("")){
                     JOptionPane.showMessageDialog(null,"Não pode ser adicionado valor vazio");
                     
-                }  else  {
+                } else if(saldo_inicial==0){
+                    JOptionPane.showMessageDialog(null,"Adicione o Saldo primeiro");
+                }
+                else  {
                     double dinheiro = Double.parseDouble(AdicionaDinheiro.getText());
                     saldo_flutuante = dinheiro+saldo_flutuante;
                     usuario.setSaldo_usuario(saldo_flutuante);
@@ -933,6 +956,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Mes2ComboBoxActionPerformed
 
+    private void bntVoltarDinheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarDinheiroActionPerformed
+        // TODO add your handling code here:
+        PainelAdicionaDinheiro.setVisible(false);
+        AdicionaDinheiro.setText("");
+        
+    }//GEN-LAST:event_bntVoltarDinheiroActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaLoginUser login = new TelaLoginUser();
+        login.setVisible(true);
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -994,6 +1032,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bntSairAdicionaSaldo;
     private javax.swing.JButton bntVoltarDinheiro;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

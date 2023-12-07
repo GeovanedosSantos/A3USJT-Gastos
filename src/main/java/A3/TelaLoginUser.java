@@ -186,6 +186,7 @@ public class TelaLoginUser extends javax.swing.JFrame {
                 usuario.setId_usuario(id_aluno);
                 usuario.login();
                 dispose();
+                
            
 
                

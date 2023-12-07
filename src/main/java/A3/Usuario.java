@@ -110,6 +110,16 @@ public class Usuario {
                 ps1.setInt(2,getId_usuario());
                 ResultSet rs1 = ps1.executeQuery();
                 if(rs1.next()){
+                setSaldo_usuario(rs1.getDouble("saldo_flutuante"));
+                setGastos_essenciais(rs1.getDouble("gasto_essencial"));
+                setGastos_naoessenciais(rs1.getDouble("gasto_naoessencial"));
+                setGastos_totais(rs1.getDouble("gastototal"));
+                setSaldo_fixo(rs1.getDouble("saldo_inicial"));
+                TelaPrincipal telaprincipal = new TelaPrincipal();
+                telaprincipal.setTitle("Controle de Gastos");
+                telaprincipal.setText(getNome_usuario(),getId_usuario(),getSaldo_usuario(),getGastos_essenciais(),
+                getGastos_naoessenciais(),getGastos_totais());
+                
                     
                 } else{
                     String sql2 = "insert into "+formattedDate+"tb (usuario_id,data_gasto,mes,ano)values(?,now(),month(now()),?)";
@@ -171,7 +181,7 @@ public class Usuario {
     }
     public void AdicionaSaldo()throws SQLException{
 
-                String sql6 = "update "+formattedDate+" set saldo_inicial=? ,saldo_flutuante=? where usuario_id=? and ano=?";
+                String sql6 = "update "+formattedDate+"tb set saldo_inicial=? ,saldo_flutuante=? where usuario_id=? and ano=?";
                 try(Connection con = factory2.obtemConexao()){
                     
                 ps5 = con.prepareStatement(sql6);
@@ -188,7 +198,7 @@ public class Usuario {
         }
     }
     public void AdicionaGastoEssencial()throws SQLException{
-                String sql6 = "update "+formattedDate+" set saldo_flutuante=?,gasto_essencial=?,"
+                String sql6 = "update "+formattedDate+"tb set saldo_flutuante=?,gasto_essencial=?,"
                         + "gastototal=? where usuario_id=? and ano=?";
                 try(Connection con = factory2.obtemConexao()){
                     
@@ -206,7 +216,7 @@ public class Usuario {
         }
     }
     public void AdicionaGastoNaoEssencial()throws SQLException{
-        String sql6 = "update "+formattedDate+" set saldo_flutuante=?,gasto_naoessencial=?,"
+        String sql6 = "update "+formattedDate+"tb set saldo_flutuante=?,gasto_naoessencial=?,"
                         + "gastototal=? where usuario_id=? and ano=?";
                 try(Connection con = factory2.obtemConexao()){
                     
@@ -224,7 +234,7 @@ public class Usuario {
         }
     }
     public void AdicionaDinheiro()throws SQLException{
-        String sql7 = "update "+formattedDate+" set saldo_flutuante=? where usuario_id=? and ano=?";
+        String sql7 = "update "+formattedDate+"tb set saldo_flutuante=? where usuario_id=? and ano=?";
         try(Connection con = factory2.obtemConexao()){
             ps5= con.prepareStatement(sql7);
             ps5.setDouble(1,getSaldo_usuario());
